@@ -40,14 +40,15 @@ public class Account {
     public void tranferTo(Account account, int amount) {
         if (this.balance < amount) {
             System.out.println("So du khong du de chuyen tien!");
-        } else
+        } else {
             this.balance = this.balance - amount;
             account.balance = account.balance + amount;
             System.out.println("Tai khoan cua " + this.name + " sau khi chuyen tien: " + this.balance);
             System.out.println("Tai khoan cua " + account.name + " sau khi nhan tien: " + account.balance);
+        }
     }
 
-    public void chooseOptionWithAmount() {
+    public void chooseOptionWithAmount(Account account) {
 
 
         do {
@@ -60,11 +61,11 @@ public class Account {
             System.out.print("Chon chuc nang ban muon su dung: ");
             option = sc.nextInt();
             switch (option) {
-//                case 1:
-//                    System.out.print("Nhap so tien muon chuyen: ");
-//                    amount = sc.nextInt();
-//                    tranferTo(account, amount);
-//                    break;
+                case 1:
+                    System.out.print("Nhap so tien muon chuyen: ");
+                    amount = sc.nextInt();
+                    tranferTo(account, amount);
+                    break;
 
                 case 2:
                     System.out.print("Nhap so tien muon nap: ");

@@ -55,10 +55,10 @@ public class main {
 //        investor.sellStock();
 //        investor.calculateProfit();
 
-        Account A = new Account(1, "VA", 5000);
-        Account B = new Account(2, "AV", 1000);
+        Account A = new Account(1, "TCBS", 5000);
+        Account B = new Account(2, "VA", 1000);
+        A.chooseOptionWithAmount();
         A.tranferTo(B,200);
-
     }
 }
 

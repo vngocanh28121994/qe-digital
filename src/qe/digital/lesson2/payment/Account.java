@@ -1,7 +1,5 @@
 package qe.digital.lesson2.payment;
 
-import com.sun.javafx.webkit.theme.ScrollBarThemeImpl;
-
 import java.util.Scanner;
 
 public class Account {
@@ -12,34 +10,44 @@ public class Account {
     private int amount;
     private int option;
     private Account account;
+
     public Account(int id, String name, int balance) {
         this.id = id;
         this.name = name;
         this.balance = balance;
+        this.amount = amount;
+
     }
 
-    public int credit(int amount){
-        if(amount <= 0)
+    public void credit(int amount) {
+        if (this.amount <= 0)
             System.out.println("So tien nap vao phai > 0");
-        else balance = balance + amount;
-            return balance;
-    }
-
-    public int debit(int amount){
-        if(amount > balance)
-            System.out.println("So du khong du de thanh toan");
-        else balance = balance - amount;
-        return balance;
-    }
-
-    public void tranferTo(Account account, int amount){
-        if(amount > balance){
-            System.out.println("Khong du so du de chuyen tien!");
+        else {
+            balance = balance + this.amount;
+            System.out.println("So tien trong tai khoan sau khi nap: " + balance);
         }
-        else debit(amount);
     }
 
-    public void chooseOptionWithAmount(int amount){
+    public void debit(int amount) {
+        if (amount > balance)
+            System.out.println("So du khong du de thanh toan");
+        else {
+            balance = balance - amount;
+            System.out.println("So tien trong tai khoan sau khi rut: " + balance);
+        }
+    }
+
+    public void tranferTo(Account account, int amount) {
+        if (this.balance < amount) {
+            System.out.println("So du khong du de chuyen tien!");
+        } else
+            this.balance = this.balance - amount;
+            account.balance = account.balance + amount;
+            System.out.println("Tai khoan cua " + this.name + " sau khi chuyen tien: " + this.balance);
+            System.out.println("Tai khoan cua " + account.name + " sau khi nhan tien: " + account.balance);
+    }
+
+    public void chooseOptionWithAmount() {
 
 
         do {
@@ -53,14 +61,20 @@ public class Account {
             option = sc.nextInt();
             switch (option) {
 //                case 1:
-//                    tranferTo(name, amount);
+//                    System.out.print("Nhap so tien muon chuyen: ");
+//                    amount = sc.nextInt();
+//                    tranferTo(account, amount);
 //                    break;
 
                 case 2:
+                    System.out.print("Nhap so tien muon nap: ");
+                    amount = sc.nextInt();
                     credit(amount);
                     break;
 
                 case 3:
+                    System.out.print("Nhap so tien muon rut: ");
+                    amount = sc.nextInt();
                     debit(amount);
                     break;
 
@@ -72,7 +86,7 @@ public class Account {
                     System.out.println("Xin moi nhap dung lua chon!");
             }
         }
-            while (option != 4);
+        while (option != 4);
 
     }
 }

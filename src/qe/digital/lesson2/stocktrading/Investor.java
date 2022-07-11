@@ -73,8 +73,8 @@ public class Investor extends StockCode {
     public void calculateProfit() {
         for(int i = 0; i < stockLists.size(); i++){
             double percentProfit = ((Double.parseDouble(sellingMatchPriceList.get(i)) - Double.parseDouble(buyMatchedPriceList.get(i))) / Double.parseDouble(buyMatchedPriceList.get(i)) * 100);
-            double currentBalanceEachStock = Math.round((initialBalance/3) + (initialBalance/3) * percentProfit / 100);
-            System.out.println("Dau tu CP "+stockLists.get(i)+" voi so tien "+Math.round(initialBalance/3)+ " dong thu ve duoc: "+currentBalanceEachStock);
+            double currentBalanceEachStock = Math.round((initialBalance/stockLists.size()) + (initialBalance/stockLists.size()) * percentProfit / 100);
+            System.out.println("Dau tu CP "+stockLists.get(i)+" voi so tien "+Math.round(initialBalance/stockLists.size())+ " dong thu ve duoc: "+currentBalanceEachStock);
             if(percentProfit >= 0) {
                 System.out.println("Lai: " + Math.round(percentProfit) + "%");
             }

@@ -11,8 +11,8 @@ public class Buoi_2 {
 //        Bai3();
 //        Bai4();
 //        Bai5();
-//        BaiBonus1();
-        BaiBonus2();
+        BaiBonus1();
+//        BaiBonus2();
     }
 
     public static void Bai1()

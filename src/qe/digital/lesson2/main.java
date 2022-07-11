@@ -46,20 +46,19 @@ public class main {
 //        System.out.println(cir.getArea());
 //        System.out.println(cir.toString());
 
-//        Investor investor = new Investor();
-//        investor.getStockList();
-//        investor.buyStock();
-//        investor.setInitialBalance(1000000);
-//        investor.getCeilPriceList();
-//        investor.getFloorPriceList();
-//        investor.sellStock();
-//        investor.calculateProfit();
+        Investor investor = new Investor();
+        investor.getStockList();
+        investor.buyStock();
+        investor.setInitialBalance(1000000);
+        investor.getCeilPriceList();
+        investor.getFloorPriceList();
+        investor.sellStock();
+        investor.calculateProfit();
 
-        Account A = new Account(1, "TCBS", 5000);
-        Account B = new Account(2, "VA", 1000);
-        A.chooseOptionWithAmount(B);
+//        Account A = new Account(1, "TCBS", 5000);
+//        Account B = new Account(2, "VA", 1000);
+//        A.chooseOptionWithAmount(B);
 
-        A.tranferTo(B,200);
     }
 }
 
